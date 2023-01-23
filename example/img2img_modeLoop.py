@@ -6,7 +6,8 @@ import sys
 sys.path.append("..") 
 from utils.utils import AI 
 
-m = AI('img2img_stability',dirName="stability")
+m1 = AI('img2img_stability',dirName="loop")
+m2 = AI('img2img_dalle',dirName="loop")
 
 width = 512
 height = 512
@@ -16,11 +17,15 @@ image = image.resize((width, height))
 
 i = 0
 filename = str(i) + '.jpg'
-image.save(m.dir / filename)
+image.save(m1.dir / filename)
 
 while i < 10:
     i = i + 1
     #image = image.resize((width / 4, height / 4))
-    image = m.run(img=image)
+
+    if(i%2==0):
+        image = m1.run(img=image)
+    else:
+        image = m2.run(img=image)
     filename = str(i) + '.jpg'
-    image.save(m.dir / filename)
+    image.save(m1.dir / filename)

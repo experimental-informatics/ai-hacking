@@ -11,7 +11,7 @@ from PIL import Image,ImageDraw
 from RealESRGAN import RealESRGAN 
 from transformers import DetrFeatureExtractor, DetrForObjectDetection, pipeline
 from diffusers import StableDiffusionImg2ImgPipeline, StableDiffusionUpscalePipeline, StableDiffusionPipeline
-import openai
+import openai as openai
 from stability_sdk import client
 import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 
@@ -75,10 +75,9 @@ class AI:
                 engine=stability_version, # Set the engine to use for generation. 
             )
         elif mode == 'txt2img_dalle' or 'img2img_dalle':
-            openai.api_key = config.openai_api_key
+           print("initualizing openai")
 
 
-            
         elif mode == 'img2text_gpt2':
             self.pipe= pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 
@@ -96,9 +95,9 @@ class AI:
         elif self.mode == 'img2img_stablediffusion':
             return self.img2img_stablediffusion(img=img,prompt=prompt,negative_prompt=negative_prompt,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps)
         elif self.mode == 'img2img_stability':
-            return self.img2img_stability(img=img,prompt=prompt,negative_prompt=negative_prompt,width=width,height=height,seed=seed,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps)
+            return self.img2img_stability(img=img,prompt=prompt,width=width,height=height,seed=seed,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps)
         elif self.mode == 'txt2img_stablity':
-            return self.txt2img_stability(prompt=prompt,negative_prompt=negative_prompt,width=width,height=height,seed=seed,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps)
+            return self.txt2img_stability(prompt=prompt,width=width,height=height,seed=seed,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps)
         elif self.mode == 'txt2img_dalle':
             return self.txt2img_dalle(prompt=prompt)
         elif self.mode == 'img2img_dalle':
@@ -122,11 +121,10 @@ class AI:
         img = self.pipe(prompt=prompt, negative_prompt=negative_prompt, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images[0]
         return img
 
-    def img2img_stability(self,img,prompt='',negative_prompt='',width=512,height=512,seed=992446758,strength=0.5, guidance_scale=5.0, num_inference_steps=25):
+    def img2img_stability(self,img,prompt='',width=512,height=512,seed=992446758,strength=0.5, guidance_scale=5.0, num_inference_steps=25):
         answers = self.stability_api.generate(
             prompt=prompt,
             init_image=img,
-            negative_prompt=negative_prompt,
             start_schedule = strength,
             seed=seed, # If a seed is provided, the resulting generated image will be deterministic.
                             # What this means is that as long as all generation parameters remain the same, you can always recall the same image simply by generating it again.
@@ -149,12 +147,11 @@ class AI:
                 #        "Your request activated the API's safety filters and could not be processed."
                 #        "Please modify the prompt and try again.")
                 if artifact.type == generation.ARTIFACT_IMAGE:
-                    img = Image.open(io.BytesIO(artifact.binary))
+                    img = Image.open(BytesIO(artifact.binary))
         return img     
-    def txt2img_stability(self,prompt='',negative_prompt='',width=512,height=512,seed=992446758,strength=0.5, guidance_scale=5.0, num_inference_steps=25):
+    def txt2img_stability(self,prompt='',width=512,height=512,seed=992446758,strength=0.5, guidance_scale=5.0, num_inference_steps=25):
         answers = self.stability_api.generate(
             prompt=prompt,
-            negative_prompt=negative_prompt,
             start_schedule = strength,
             seed=seed, # If a seed is provided, the resulting generated image will be deterministic.
                             # What this means is that as long as all generation parameters remain the same, you can always recall the same image simply by generating it again.
@@ -177,10 +174,11 @@ class AI:
                 #        "Your request activated the API's safety filters and could not be processed."
                 #        "Please modify the prompt and try again.")
                 if artifact.type == generation.ARTIFACT_IMAGE:
-                    img = Image.open(io.BytesIO(artifact.binary))
+                    img = Image.open(BytesIO(artifact.binary))
         return img
          
     def txt2img_dalle(self, prompt=''):
+        openai.api_key = config.openai_api_key
         response = openai.Image.create(
             prompt=prompt,
             n=1,
@@ -192,9 +190,14 @@ class AI:
         stream = BytesIO(image_data)
         img = Image.open(stream)
         return img
-    def img2img_dalle(self, image):
+    def img2img_dalle(self, img):
+        openai.api_key = config.openai_api_key
+        
+        temp = BytesIO()
+        img.save(temp,format="png")
+        
         response = openai.Image.create_variation(
-            image = image,
+            image = temp.getvalue(),
             n=1,
             size="512x512",
             response_format="b64_json",

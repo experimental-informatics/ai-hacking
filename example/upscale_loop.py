@@ -8,8 +8,8 @@ from utils.utils import AI
 
 m = AI('upscale_stablediffusion')
 
-width = 128
-height = 128
+width = 256
+height = 256
 url = f"https://picsum.photos/{width}/{height}"
 image = Image.open(requests.get(url, stream=True).raw).convert("RGB")
 image = image.resize((width, height))
