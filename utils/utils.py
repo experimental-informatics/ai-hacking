@@ -19,7 +19,7 @@ import config
 
 
 def dummy(images, **kwargs):
-		return images, False   
+    return images, False   
 
 def modes():
     print("possible modes:\n\n")
@@ -113,7 +113,7 @@ class AI:
         return img
 
     def img2img_stablediffusion(self, img, prompt='', negative_prompt='', strength=0.5, guidance_scale=5, num_inference_steps=25):
-        img = self.pipe(prompt=prompt, init_image=img, negative_prompt=negative_prompt, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images[0]
+        img = self.pipe(prompt=prompt, init_image=img, negative_prompt=negative_prompt,sampler=generation.SAMPLER_K_DPMPP_2M, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps).images[0]
         return img
 
     def txt2img_stablediffusion(self, prompt, negative_prompt='', strength=0.5, guidance_scale=5, num_inference_steps=25):
