@@ -79,8 +79,7 @@ class AI:
 
 
         elif mode == 'img2text_gpt2':
-            self.pipe= pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
-
+            self.pipe = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
         else:
             modes()
 
@@ -208,8 +207,9 @@ class AI:
         img = Image.open(stream)
         return img
         
-    def img2text_gpt2(self, image):
-        return self.pipe(image)
+    def img2text_gpt2(self, img):
+        return self.pipe(img)[0]["generated_text"]
+
 
     # def img2text_clip():
     #     return

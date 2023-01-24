@@ -1,6 +1,5 @@
 
 *.jpg
-*.mp4
 
 .pth
 .pth.lock
