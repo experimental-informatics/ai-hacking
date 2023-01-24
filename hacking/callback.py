@@ -1,6 +1,9 @@
 from diffusers import StableDiffusionPipeline
 import torch
 
+# https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion#diffusers.StableDiffusionPipeline.__call__.callback
+# https://github.com/huggingface/diffusers/pull/1150
+
 def dummy(images, **kwargs):
     return images, False  
 
