@@ -1,5 +1,11 @@
 
-hacking/*
+*.jpg
+*.mp4
+
+.pth
+.pth.lock
+
+#hacking/*
 
 # Ignore Mac system files
 .DS_Store

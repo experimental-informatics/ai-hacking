@@ -1,0 +1,10 @@
+ffmpeg -framerate 24 -pattern_type glob -i '5/*.jpg' 5.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '6/*.jpg' 6.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '7/*.jpg' 7.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '8/*.jpg' 8.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '9/*.jpg' 9.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '10/*.jpg' 10.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '11/*.jpg' 11.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '12/*.jpg' 12.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '13/*.jpg' 13.mp4
+ffmpeg -framerate 24 -pattern_type glob -i '14/*.jpg' 14.mp4
