@@ -41,10 +41,10 @@ for k in range(2):
         
         if(i%2==0):
             image_temp = m1.run(img=image)
-            image = Image.composite(image_temp,image, im)
+            image = Image.composite(image,image_temp, im)
         else:
             image_temp = m2.run(img=image)
-            image = Image.composite(image_temp,image, im)
+            image = Image.composite(image,image_temp, im)
 
         filename = str(i) + '.jpg'
         image.save(m1.dir / filename)
