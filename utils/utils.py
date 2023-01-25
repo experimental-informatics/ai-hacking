@@ -33,7 +33,7 @@ def modes():
     print("txt2img_stablity",end=', ')
     print("txt2img_dalle",end=', ')
     print("img2img_dalle",end=', ')
-    print("img2text_gpt2",end='\n')
+    print("img2txt_gpt2",end='\n')
 
 class AI:
     def __init__(self, mode=None, stability_engine='stable-diffusion-v1-5', dirName=time.strftime("%Y%m%d-%H%M%S")):
@@ -41,7 +41,9 @@ class AI:
         self.dir = Path.cwd() / self.dirName
         self.dir.mkdir(parents=True,exist_ok=True)
         self.mode = mode
-
+        print("MODE")
+        print(mode == "img2txt_gpt2")
+        
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         if mode == 'upscale_realesrgan':
             self.model = RealESRGAN(self.device, scale=4)
@@ -65,7 +67,7 @@ class AI:
             )
             self.pipe = self.pipe.to(self.device)
             self.pipe.safety_checker = dummy
-        elif mode == 'img2img_stability' or 'txt2img_stablity':
+        elif mode == 'img2img_stability' or mode == 'txt2img_stablity':
             # Available engines: stable-diffusion-v1 stable-diffusion-v1-5 stable-diffusion-512-v2-0 stable-diffusion-768-v2-0 
             # stable-diffusion-512-v2-1 stable-diffusion-768-v2-1 stable-inpainting-v1-0 stable-inpainting-512-v2-0
 
@@ -76,11 +78,9 @@ class AI:
                 verbose=True, # Print debug messages.
                 engine=stability_engine, # Set the engine to use for generation. 
             )
-        elif mode == 'txt2img_dalle' or 'img2img_dalle':
+        elif mode == 'txt2img_dalle' or  mode == 'img2img_dalle':
            print("initualizing openai")
-
-
-        elif mode == 'img2text_gpt2':
+        elif mode == "img2txt_gpt2":
             self.pipe = transformers.pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
         else:
             modes()
@@ -103,6 +103,9 @@ class AI:
             return self.txt2img_dalle(prompt=prompt)
         elif self.mode == 'img2img_dalle':
             return self.img2img_dalle(img=img,mask=mask,prompt=prompt)
+        elif self.mode == 'img2txt_gpt2':
+            return self.img2txt_gpt2(img)
+        
         else:
             modes()
             
@@ -284,7 +287,7 @@ class AI:
         img = Image.open(stream)
         return img
         
-    def img2text_gpt2(self, img):
+    def img2txt_gpt2(self, img):
         return self.pipe(img)[0]["generated_text"]
 
 
