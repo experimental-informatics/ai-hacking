@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 import requests
 
 import os
@@ -29,20 +29,22 @@ for k in range(2):
         i = i + 1
         border = border-1
         print(k,i)
-        im = Image.new('RGB', (512, 512), (255,255,255))
+        im = Image.new('RGB', (512, 512), (0,0,0))
         draw = ImageDraw.Draw(im)
         shift = border
-        coloring = 0
+        coloring = 255
         draw.rectangle((shift,shift,width-shift,height-shift), (coloring,coloring,coloring))
         im = im.convert('L')
+
+        #msk = ImageOps.invert(im)
         #image = image.resize((width / 4, height / 4))
         
         if(i%2==0):
             image_temp = m1.run(img=image)
-            image = Image.composite(image, image_temp, im)
+            image = Image.composite(image_temp,image, im)
         else:
             image_temp = m2.run(img=image)
-            image = Image.composite(image, image_temp, im)
+            image = Image.composite(image_temp,image, im)
 
         filename = str(i) + '.jpg'
         image.save(m1.dir / filename)
