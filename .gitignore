@@ -1,9 +1,11 @@
 
 *.jpg
+*.png
 
 .pth
 .pth.lock
 
+*/cache/*
 
 /.vscode
 #hacking/*
