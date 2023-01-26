@@ -8,10 +8,11 @@ import glob
 from pathlib import Path
 from PIL import Image, ImageDraw
 
+from clip_interrogator import Config, Interrogator
 import transformers
 from RealESRGAN import RealESRGAN 
 from transformers import DetrFeatureExtractor, DetrForObjectDetection, pipeline
-from diffusers import StableDiffusionImg2ImgPipeline, StableDiffusionUpscalePipeline, StableDiffusionPipeline
+#from diffusers import StableDiffusionImg2ImgPipeline, StableDiffusionUpscalePipeline, StableDiffusionPipeline
 import openai as openai
 from stability_sdk import client
 import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
@@ -34,6 +35,7 @@ def modes():
     print("txt2img_dalle",end=', ')
     print("img2img_dalle",end=', ')
     print("img2txt_gpt2",end='\n')
+    print("img2txt_clip",end='\n')
 
 class AI:
     def __init__(self, mode=None, stability_engine='stable-diffusion-v1-5', dirName=time.strftime("%Y%m%d-%H%M%S")):
@@ -41,8 +43,6 @@ class AI:
         self.dir = Path.cwd() / self.dirName
         self.dir.mkdir(parents=True,exist_ok=True)
         self.mode = mode
-        print("MODE")
-        print(mode == "img2txt_gpt2")
         
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         if mode == 'upscale_realesrgan':
@@ -82,6 +82,8 @@ class AI:
            print("initualizing openai")
         elif mode == "img2txt_gpt2":
             self.pipe = transformers.pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+        elif mode == "img2txt_clip":
+            self.pipe = Interrogator(Config(clip_model_name="ViT-L-14/openai"))
         else:
             modes()
 
@@ -105,6 +107,8 @@ class AI:
             return self.img2img_dalle(img=img,mask=mask,prompt=prompt)
         elif self.mode == 'img2txt_gpt2':
             return self.img2txt_gpt2(img)
+        elif self.mode == 'img2txt_clip':
+            return self.img2txt_clip(img)
         
         else:
             modes()
@@ -289,6 +293,9 @@ class AI:
         
     def img2txt_gpt2(self, img):
         return self.pipe(img)[0]["generated_text"]
+
+    def img2txt_clip(self, img):
+        return self.pipe.interrogate(img)
 
 
     # def img2text_clip():
