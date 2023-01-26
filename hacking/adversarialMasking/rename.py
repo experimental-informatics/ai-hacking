@@ -1,7 +1,7 @@
 
 import os
 
-for k in range(5, 15):
+for k in range(0,1):
     dir = f'./{k}'
 
     for i in range(1001):

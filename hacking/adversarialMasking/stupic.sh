@@ -1,1 +1,1 @@
-ffmpeg -framerate 24 -pattern_type glob -i '5/*.jpg' 5.mp4
+ffmpeg -framerate 30 -pattern_type glob -i '0/*.jpg' 0.mp4
