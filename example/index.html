@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POP-Culture-Fever-Dream</title>
+    <style>
+        #content img {
+            display: block;
+            margin: auto;
+            height: 30vh;
+        }
+
+        body {
+            background-color: black;
+            text-align: center;
+            font-family: monospace;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            font-size: 2vh;
+            text-shadow: 1px 1px 2px black;
+            width: 1000px;
+            margin: 2.5% auto;
+        }
+
+        #content {
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+
+        #background {
+            opacity: 0.1;
+            text-align: left;
+            position: fixed;
+        }
+
+        #background img {
+            display: inline-block;
+            width: 5vh;
+            width: 5vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    <div id="content"></div>
+    <script>
+        var request = new XMLHttpRequest();
+        request.open('GET', 'cliploop_save.txt', false);
+        request.send();
+        var textfileContent = request.responseText;
+
+        textfileContent.split('\n').forEach((line, i) => {
+            if (i == 0) {
+                return
+            }
+            let [filename, text] = line.split('@')
+
+            let img = document.createElement('img')
+            img.src = `cliploop/${filename}.png`
+            document.querySelector('#content').appendChild(img)
+
+            document.querySelector('#background').appendChild(img.cloneNode(true))
+
+            let p = document.createElement('p')
+            p.innerText = text
+            document.querySelector('#content').appendChild(p)
+        })
+    </script>
+</body>
+</html>

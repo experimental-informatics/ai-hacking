@@ -1,1 +1,1 @@
-ffmpeg -framerate 30 -pattern_type glob -i 'cliploop/*.png' cliploop.mp4
+ffmpeg -framerate 10 -pattern_type glob -i 'cliploop/*.png' cliploop.mp4

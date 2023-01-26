@@ -6,9 +6,6 @@ import torch
 from diffusers import StableDiffusionPipeline, EulerDiscreteScheduler
 
 
-def fix_filename(filename):
-    return "".join([c for c in filename if c.isalpha() or c.isdigit() or c==' ']).rstrip()
-
 width = 512
 height = 512
 
@@ -16,8 +13,8 @@ url = f"https://picsum.photos/{width}/{height}"
 img = Image.open(requests.get(url, stream=True).raw).convert("RGB")
 img = img.resize((width, height))
 
-with open('cliploop.txt', 'w') as f:
-    f.write('init')
+#with open('cliploop.txt', 'w') as f:
+ #   f.write('init')
 
 for i in range(10000):
     ci = Interrogator(Config(clip_model_name="ViT-L-14/openai"))
@@ -36,8 +33,8 @@ for i in range(10000):
     prompt = t
     
 
-    with open('cliploop.txt', 'a') as f:
-        f.write(f"\n{str(i).zfill(4)}@{fix_filename(t)}")
+    #with open('cliploop.txt', 'a') as f:
+    #    f.write(f"\n{str(i).zfill(4)}@{fix_filename(t)}")
 
     img = ci(prompt).images[0]
-    img.save(f"cliploop/{str(i).zfill(4)}.png")
+    #img.save(f"cliploop/{str(i).zfill(4)}.png")
