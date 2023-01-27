@@ -8,11 +8,13 @@ import glob
 from pathlib import Path
 from PIL import Image, ImageDraw
 
+import requests
+
 from clip_interrogator import Config, Interrogator
 import transformers
 from RealESRGAN import RealESRGAN 
 from transformers import DetrFeatureExtractor, DetrForObjectDetection, pipeline
-#from diffusers import StableDiffusionImg2ImgPipeline, StableDiffusionUpscalePipeline, StableDiffusionPipeline
+from diffusers import StableDiffusionImg2ImgPipeline, StableDiffusionUpscalePipeline, StableDiffusionPipeline
 import openai as openai
 from stability_sdk import client
 import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
@@ -20,6 +22,21 @@ from torchvision.transforms import GaussianBlur
 
 import config
 
+
+def loremImage(width = 512,height = 512):
+    url = f"https://picsum.photos/{width}/{height}"
+    img = Image.open(requests.get(url, stream=True).raw).convert("RGB")
+    img = img.resize((width, height))
+    return img
+
+
+def fixFilename(filename):
+    filename = filename[:200]
+    return "".join([c for c in filename if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+
+
+def getTimestamp():
+    return time.strftime("%Y%m%d-%H%M%S")
 
 def dummy(images, **kwargs):
     return images, False   
@@ -37,11 +54,14 @@ def modes():
     print("img2txt_gpt2",end='\n')
     print("img2txt_clip",end='\n')
 
+def makeDir(dirName=getTimestamp()):
+    dir = Path.cwd() / dirName
+    dir.mkdir(parents=True,exist_ok=True)
+    return dir
+
 class AI:
-    def __init__(self, mode=None, stability_engine='stable-diffusion-v1-5', dirName=time.strftime("%Y%m%d-%H%M%S")):
-        self.dirName = dirName
-        self.dir = Path.cwd() / self.dirName
-        self.dir.mkdir(parents=True,exist_ok=True)
+    def __init__(self, mode=None, stability_engine='stable-diffusion-v1-5'):
+
         self.mode = mode
         
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -94,7 +114,7 @@ class AI:
         elif self.mode == 'upscale_stablediffusion':
             return self.upscale_stablediffusion(img=img,prompt=prompt, callback=callback)
         elif self.mode == 'txt2img_stablediffusion':
-            return self.txt2img_stablediffusion(prompt=prompt,negative_prompt=negative_prompt,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback)
+            return self.txt2img_stablediffusion(prompt=prompt,negative_prompt=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback)
         elif self.mode == 'img2img_stablediffusion':
             return self.img2img_stablediffusion(img=img,prompt=prompt,negative_prompt=negative_prompt,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback)
         elif self.mode == 'img2img_stability':
@@ -125,8 +145,8 @@ class AI:
         img = self.pipe(prompt=prompt, init_image=img, negative_prompt=negative_prompt, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback).images[0]
         return img
 
-    def txt2img_stablediffusion(self, prompt, negative_prompt='', strength=0.5, guidance_scale=5, num_inference_steps=25, callback=None):
-        img = self.pipe(prompt=prompt, negative_prompt=negative_prompt, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback).images[0]
+    def txt2img_stablediffusion(self, prompt, negative_prompt='', guidance_scale=5, num_inference_steps=25, callback=None):
+        img = self.pipe(prompt=prompt, negative_prompt=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback).images[0]
         return img
 
     def img2img_stability(self,img,prompt='',mask=None,width=512,height=512,seed=992446758,strength=0.5, guidance_scale=5.0, num_inference_steps=25):

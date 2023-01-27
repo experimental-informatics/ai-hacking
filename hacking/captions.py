@@ -4,28 +4,36 @@ import requests
 import sys
 sys.path.append("..") 
 from utils.utils import AI
+#import the py file utils in folder utils as name utils
+import utils.utils as utils
 
-def fix_filename(filename):
-    return "".join([c for c in filename if c.isalpha() or c.isdigit() or c==' ']).rstrip()
 
-img2txt = AI('img2txt_gpt2', dirName=("captions_clip/"))
-txt2img = AI('txt2img_stablediffusion', dirName=("captions_clip/"))
+dirName = utils.makeDir("captions_clip/"+utils.getTimestamp())
 
-width = 512
-height = 512
 
-url = f"https://picsum.photos/{width}/{height}"
-img = Image.open(requests.get(url, stream=True).raw).convert("RGB")
-img = img.resize((width, height))
-
+img = utils.loremImage()
 i = 0
-filename = str(i) + '.jpg'
-img.save(img2txt.dir / filename)
+filename = f"{str(i).zfill(4)}.jpg"
+img.save(dirName / filename)
+
+with open(dirName / 'clip.txt', 'w', encoding='utf-8') as f:
+    f.write(f"{filename}@init\n")
+
 
 while i < 1000:
+    
     i = i + 1
-    txt = img2txt.run(img)
+
+    model = AI('img2txt_clip')
+    txt = model.run(img)
     print(txt)
-    img = txt2img.run(prompt=txt)
-    filename = f"{str(i)}-{fix_filename(txt)}.jpg"
-    img.save(img2txt.dir / filename)
+
+    filename = f"{str(i).zfill(4)}-{utils.fixFilename(txt)}.jpg"
+
+    with open(dirName / 'clip.txt', 'a',encoding='utf-8') as f:
+        f.write(f"{filename}@{txt}\n")
+    
+    model = AI('txt2img_stablediffusion')
+    img = model.run(prompt=txt)
+
+    img.save(dirName / filename)
