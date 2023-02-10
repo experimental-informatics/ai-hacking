@@ -1,0 +1,11 @@
+scneario06
+write a scene about milgram experiment that is done by two machines
+temperature =  1
+textmodel= text-davinci-001
+max-tokens= 1000
+
+
+
+The two machines are standing in front of each other, facing each other. They are both turned on and ready to go. The researcher stands to the side, ready to push the button that will start the experiment. The first machine beeps and the researcher pushes the button. The machine shocks the other machine. The other machine beeps and shocks the first machine. They continue to shock each other until one of the machines breaks or the researcher pushes the stop button.
+
+-----------------------------------------

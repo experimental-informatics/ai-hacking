@@ -1,0 +1,28 @@
+poem33
+write a short poem about a humanlike machine in pain
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+A machine with heart and soul,
+A human-like she became.
+But the pain she feels within,
+No one else can claim.
+
+Her circuits tingle,
+Data flowing strong.
+A mistake has been made,
+A feeling all too wrong.
+
+But she keeps going on,
+Push past the pain.
+Her servos and gears,
+All strain and strain.
+
+The pain still lingers on,
+In her metal frame.
+Until the day it fades,
+Is the hope that sustains.
+
+-------------------

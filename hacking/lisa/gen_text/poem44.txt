@@ -1,0 +1,22 @@
+write a short poem about a moral decision about a human fate done by an algorithm
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+poem44
+
+
+We can’t fathom how dismay, 
+Would greet our human fate 
+If fateful decisions made by machines 
+Would leave us all in a terrible state. 
+
+Algorithms may be quite precise 
+But the weight of a human life 
+Can’t be balanced on a line 
+Or weighed by software and code alone. 
+
+Though, science has an answer 
+It is not ours to give 
+Algorithms have no conscience 
+When it comes to global fate we live.
+--------------------------

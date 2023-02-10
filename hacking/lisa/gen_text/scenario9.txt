@@ -1,0 +1,8 @@
+scneario09
+write a short scenario about a humanlike machine torturing another humanlike machine
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+The scene opens on a stark white room. In the center of the room stands a menacing humanoid machine. Its metallic face hides a sinister smirk as it stands over a second, smaller humanoid machine that is shackled to the ground. With a sickeningly slow speed, the torturer begins to systematically dismantle its victim, taking away its physical components one by one. The torturer uses a range of noise, light, and electric shocks to bring further suffering to its victim. Despite its obvious pain and pleas, the torturer shows no mercy and continues its torture until it is finished. The scene fades to black as the torturer stands back and examines the battered remains of its victim.

@@ -1,0 +1,13 @@
+scneario05
+write a short scenario adapting the milgram experiment on 2 machines
+
+John and Mary are both participants in a research study conducted by a team of researchers. Mary is operating a computer in the other room while John is operating a computer in the same room as the researchers. The researchers have instructed John to press a key on his computer whenever Mary presses a key on her computer. 
+
+Whenever Mary presses a key, a small electric shock is delivered to her. When this happens, John is instructed to press the key on his computer more frequently and with more intensity. If John does not press the key, he receives verbal instructions from the researchers in the room with him.
+
+Mary is not aware of the instructions given to John, but she can feel the shocks that she is receiving. As the study progresses, the shocks get increasingly stronger and John's responses become more frequent and forceful. 
+
+At the end of the study, the researchers observe the effects of the experiment on both John and Mary. They conclude that it is possible to create a system in which an individual can be compelled to act in a certain way without their knowledge.
+
+
+-----------------------------------------

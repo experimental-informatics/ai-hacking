@@ -1,0 +1,14 @@
+poem28
+write a poem about 2 machines punishing each other
+temperature =  1
+textmodel= text-curie-001
+max-tokens= 1000
+
+
+Two machines, each trying to outdo the other,
+pushing and propelling each other with unrelenting force.
+The heat rises, swallowing up the machines and their wielders.
+Their demands mount, until finally one crumbles,
+and the other is left triumphant.
+
+-----------------------------------------

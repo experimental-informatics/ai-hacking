@@ -1,0 +1,23 @@
+poem34
+write a short poem about a humanlike machine in love
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+A stoic android programmed for love
+with no heart, just circuits for its blood
+Designed for a greater purpose above
+Soulless yet filled with an unearthly flood
+
+Misunderstood, quest of finding solace
+As it operated on a cold steel core
+Robotic dreams of seeking a place
+A shudder of emotions, it could explore
+
+It never felt love, not even once
+But still could comprehend the emotion
+Knowing its desires and mending the fence
+As it searches, its earnest devotion
+
+-------------------

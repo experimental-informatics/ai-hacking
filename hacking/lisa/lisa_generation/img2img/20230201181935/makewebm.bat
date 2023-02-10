@@ -1,0 +1,1 @@
+ffmpeg -y -framerate 12.0 -i 20230201181935_%%05d.png -crf 50 -preset veryfast 20230201181935.webm

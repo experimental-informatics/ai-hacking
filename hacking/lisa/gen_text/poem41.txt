@@ -1,0 +1,13 @@
+write a short poem about the trolley experiment
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+poem41
+
+
+A trolley so blind, steering a course so defined
+Your hand on the switch, it's a heavy decision to make
+Difficult choices looming, can you be the one to take?
+A sacrifice the world may view wrong, yet one that's morally right
+Your moral compass guides you, says this is the right fight
+--------------------------

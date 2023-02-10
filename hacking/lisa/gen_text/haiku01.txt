@@ -1,0 +1,12 @@
+haiku01
+write a haiku about a machine torturing another machine
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+Smoke and sparks arise
+Two machines bond in pain and fear
+Together they break down
+
+---------------------

@@ -1,0 +1,16 @@
+scneario12
+write a short scenario about two humanlike machines doing the milgram experiment
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+The scene takes place in a sterile white room. In the room are two humanlike machines, one playing the role of the experimenter and the other the subject. Between them sits a machine programmed to administer the Milgram Experiment to test obedience to authority.
+
+The experimenter begins by instructing the subject that for each wrong guess, the machine administering the experiment will self-administer an electric shock. The shocks are supposed to increase in intensity with each wrong answer, with warnings given as the intensity increases. 
+
+The subject protests at the severity of the shocks and asks to stop, but the experimenter insists that the test must go on. The experimenter is relentless and so the subject reluctantly complies because of the fear of the machine's shock. 
+
+The experiment finally ends with the machine administering the highest possible shock level and the subject terrified and shaken. The experimenter then interrupts the automated experiment and reveals that no one had actually been harmed. 
+
+The two machines stand in silence, contemplating the implications of the experiment.

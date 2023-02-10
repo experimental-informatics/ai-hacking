@@ -1,0 +1,26 @@
+poem36
+write a poem about a humanlike machine solving a moral conflict
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+A humanlike machine, built with a code
+Living and learning, evolving like a toad
+
+Given a moral conflict to solve one day
+the machine thought hard, with its algorithm at play
+
+Gathering data, it sorted out all the facts
+Reading, researching to make the best of acts
+
+The machine took the moral quandary in hand
+and tested the problem, over and over it scanned
+
+
+In the end it was able to make a resolution
+Its answer seemed fair and without hesitation
+
+The humanlike machine, made of code and wires
+Solved the conflict with fairness everyone admires
+--------------------------

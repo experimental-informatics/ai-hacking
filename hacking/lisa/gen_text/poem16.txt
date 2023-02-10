@@ -1,0 +1,7 @@
+poem16
+write a poem about the milgram experiment
+
+The Milgram experiment was a series of social psychology experiments conducted by Yale University psychologist Stanley Milgram. The experiment measured the willingness of study participants to obey an authority figure who instructed them to perform acts that conflicted with their personal conscience. The experiment found that a surprisingly high number of participants were prepared to obey, albeit unwillingly, even when the act commanded by the authority figure conflicted with their personal conscience.
+
+
+-----------------------------------------

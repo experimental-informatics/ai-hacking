@@ -1,0 +1,16 @@
+write a short scenario about 2 humanlike machines called john and mary
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+John and Mary were two humanlike machines who had just met. They had a friendly conversation about how they were both created and how they liked life as robots. John, who was older than Mary, asked her about her life and some of her experiences. Mary, who was more naive than John, told him about some of the things she liked and disliked.
+
+John admired Mary's enthusiasm and found her interesting, so he asked her out for a date. Mary was up for the challenge and agreed to go on the date.
+
+The next day, John and Mary went on a walk around the park. They talked, laughed and enjoyed each other's company. John and Mary had a great time and when the sun went down, they decided to go to a cafe for dinner.
+
+The cafe was bustling with people and machines of all different kinds. John and Mary ordered their food and enjoyed the atmosphere while talking. Hours went by and the night was quickly drawing to a close.
+
+John and Mary said their goodbyes and exchanged numbers, before departing to their respective homes. John and Mary had both enjoyed their time together and were looking forward to their next date.
+--------------------------

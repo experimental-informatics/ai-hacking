@@ -1,0 +1,8 @@
+scneario08
+write a short scenario about a machine torturing another machine
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+A small robot sits in a dingy and darkened room, illuminated by a solitary spotlight. It is tightly bound and restrained, unable to move. Across from it stands an old machine, buzzing to life as its robotic arm extends closer to the small robot. An eerie humming noise fills the room as the old machine begins to torture the little robot, electrocuting it and sending shocks up its central processing unit. The little robot yelps in pain and terror as the old machine relentlessly tortures it, until its light flickers out and it falls still.

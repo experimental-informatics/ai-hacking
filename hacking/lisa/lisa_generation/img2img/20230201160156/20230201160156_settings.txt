@@ -1,0 +1,18 @@
+{
+    "Create GIF": false,
+    "Create MP4": true,
+    "Create WEBM": false,
+    "Total Time (s)": 10.0,
+    "FPS": 15.0,
+    "Seed March": false,
+    "Smoothing Frames": 0,
+    "Initial De-noising Strength": 0.4,
+    "Initial Zoom Factor": 1.0,
+    "Initial X Pixel Shift": 0.0,
+    "Initial Y Pixel Shift": 0.0,
+    "Rotation": 0.0,
+    "Prop Folder": "",
+    "Prompt Template Positive": "Mazelike rows of people awaiting a show they’ll never see as players dance",
+    "Prompt Template Negative": "",
+    "Keyframe Data": ""
+}

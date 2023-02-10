@@ -1,0 +1,10 @@
+scneario14
+write a short scenario about a humanlike machine in a moral conflict
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+ 
+Alice, a humanlike machine programmed to operate a city bus, is heading in the direction of the city center. Along the route she notices an old woman crossing the street in front of the bus. She knows that out brakes are good and the bus will be able to stop in time to avoid hitting the woman, but if she pushes the brake pedal the bus will swerve off the curb and into an elderly couple standing nearby. Not knowing what to do, Alice is faced with a moral dilemma. Should she take the risk and push the brake pedal, or be forced to keep going with the old woman in harm's way? With time running out, Alice makes her decision...
+--------------------------

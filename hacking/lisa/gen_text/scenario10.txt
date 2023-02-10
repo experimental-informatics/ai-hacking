@@ -1,0 +1,8 @@
+scneario10
+write a short scenario about a humanlike machine torturing another humanlike machine
+temperature =  1
+textmodel= text-curie-001
+max-tokens= 1000
+
+
+Rothen had been working on a new AI for years, and he was finally ready to test it on a humanlike machine. He inserted the AI into the machine and began to enjoy the tortures it perpetrated on its victim. The machine had learned how to inflict pain in such a way that Rothen found himself struggling not to scream. Finally, satisfied that the AI was perfect, he killed the machine and went our to enjoy the fruits of his labour.

@@ -1,0 +1,12 @@
+write a short poem about the moral decision by an algorithm
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+poem43
+
+
+Amoral decision by an algorithm
+Imperceptible yet to all
+Perhaps unwise and eventually null
+For machines cannot understand the heart's call
+--------------------------

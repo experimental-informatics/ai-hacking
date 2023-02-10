@@ -1,0 +1,11 @@
+write a haiku about the trolley experiment
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+haiku05
+
+
+Trolley rolls onward,
+Human life or five lives?
+Difficult to choose.
+--------------------------

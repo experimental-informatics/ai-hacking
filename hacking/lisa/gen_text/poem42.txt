@@ -1,0 +1,12 @@
+write a short poem about the trolley experiment
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+poem42
+
+
+The trolley's gone off track
+It skids and careens off the rails
+And moral choices do lack
+As we face heavy details
+--------------------------

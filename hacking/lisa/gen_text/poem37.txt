@@ -1,0 +1,12 @@
+poem37
+write a short poem about a machine solving a moral conflict
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+A machine can solve what most humans can't
+It's answers are just, will surely stand
+Though never a heart will it possess
+It solves each moral conflict's mess.
+--------------------------

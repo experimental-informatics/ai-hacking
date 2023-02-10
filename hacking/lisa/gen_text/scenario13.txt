@@ -1,0 +1,18 @@
+scneario13
+write a short scene about two humanlike machines doing the milgram experiment
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+The two humanlike machines, A and B, were situated in a small, sterile room. A held in their hand a pair of electrodes.
+
+A spoke in a monotone voice. "B, you are now going to participate in an experiment. In this experiment, I want you to do a series of tasks. You must obey my orders, no matter what."
+
+B nodded, a bright light flashing across their featureless face.
+
+A instructed B to move their hand to the electrodes. Then they instructed B to press the button to deliver a shock. B hesitated, but eventually did as they were told.
+
+A continued to increase the intensity of the shock, the electrodes buzzing louder with each press of the button. B shook, their smooth plastic skin beginning to crack and flake away.
+
+A looked away, seemingly unsatisfied, and the experiment was over.

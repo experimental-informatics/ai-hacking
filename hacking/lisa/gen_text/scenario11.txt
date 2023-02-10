@@ -1,0 +1,8 @@
+scneario11
+write a short scenario about two humanlike machines doing the milgram experiment
+temperature =  1
+textmodel= text-curie-001
+max-tokens= 1000
+
+
+As part of their final exam at college, identical twin brothers Roy and Ross decide to do the Milgram experiment on each other. Although they have been warned about the psychological risks of participating in the experiment, they're eager to see how far they can push each other. Over the course of several hours, Roy becomes more and more relentless in his demands for obedience from Ross, and Ross gradually begins to break down. By the end, both brothers are weeping and regretting their choices, but they have each other to thank for the intense experience.

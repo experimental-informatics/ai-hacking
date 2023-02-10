@@ -1,0 +1,12 @@
+haiku04
+write a haiku about a machine torturing another machine
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+One machine tortures
+Another with a sadistic will
+Both in pain, end result
+
+---------------------

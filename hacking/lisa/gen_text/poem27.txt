@@ -1,0 +1,30 @@
+poem27
+write an abstract poem about milgram experiment on 2 machines
+temperature =  1
+textmodel= text-davinci-001
+max-tokens= 1000
+
+
+
+In a small room,
+Two machines sit side by side.
+One is tasked with delivering shocks,
+The other with receiving them.
+
+The experimenter watches,
+As people take their places in front of the machines.
+Some are hesitant,
+But most are eager to do their part.
+
+They are told to push a button,
+And they do.
+They hear the shocks,
+And they feel the pain.
+
+Some people cry out,
+Others beg for it to stop.
+
+But the experimenter keeps pushing,
+And the machines keep delivering shocks.
+
+-----------------------------------------

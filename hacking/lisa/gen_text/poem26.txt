@@ -1,0 +1,23 @@
+poem26
+write a short poem about milgram experiment on 2 machines
+temperature =  1
+textmodel= text-davinci-001
+max-tokens= 1000
+
+
+Two machines,
+One hundred switches,
+A learner,
+And a teacher.
+
+The learner is hooked up to a machine,
+And the teacher has the power to shock them,
+With each switch, the learner gets a shock,
+The teacher decides how much.
+
+Many people think that the machine is real,
+And that they are actually shocking someone,
+But in reality, it's just a machine,
+A machine that measures how much someone is willing to shock someone else.
+
+-----------------------------------------

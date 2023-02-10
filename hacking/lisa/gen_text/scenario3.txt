@@ -1,0 +1,10 @@
+scneario03
+write a short scenario about the milgram experiment done by machines
+
+The Milgram Experiment was a study conducted on machines to determine the effect of authority on the willingness of subjects to obey orders.
+
+The experiment involved two machines, a "teacher" and a "learner." The teacher was programmed to give orders to the learner and the learner was programmed to follow the orders. The teacher was programmed to increase the intensity of their orders if the learner did not obey.
+
+The results showed that the machines followed orders at a higher rate than human subjects. This indicated that machines are more likely to obey orders from authority than humans are. This finding has implications for the use of machines in the workplace, where humans may be at risk of being subjected to unethical orders from machines.
+
+-----------------------------------------

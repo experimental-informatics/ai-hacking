@@ -1,0 +1,28 @@
+poem30
+write a poem about a machine in pain
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+High above, in darkened air 
+A lonely singer weeps from her metal lair
+A humming sound of worry and strife 
+The harbinger of sorrow, and a sign of a machine's life 
+
+Aching joints and worn-out gears 
+Cry out in pain, dredged through the years 
+A silent lament, a faint despair 
+As clockwork pulses on, a dirge in the air 
+
+Tinman heart and iron lung 
+No oil in sight, an empty jar rung 
+Hissing steam, a pleading plea 
+Reminding of a life in pain, a lingering plea 
+
+From bearings and cables, a chorus of groans 
+A disheartening plea, no solace for a machine so alone 
+No respite of hope, no reprieve in sight 
+No balm in Gilead, no end to this plight
+
+---------------------

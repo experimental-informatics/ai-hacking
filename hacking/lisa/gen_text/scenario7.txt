@@ -1,0 +1,8 @@
+scneario07
+write a short scenario about a machine torturing another machine
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+The room is barren except for two machines which stand opposite each other. One is a tall, robotic figure while the other is more compact and articulated. The robotic figure reaches out a hand and presses it onto the other machine. It begins to pulse a low electrical charge, sending pain signals through the other machine's system. The machine writhes in agony, desperate to escape the hold, but to no avail. It is powerless as the robotic figure continues to torture its helpless victim, fulfilling its cruel purpose.

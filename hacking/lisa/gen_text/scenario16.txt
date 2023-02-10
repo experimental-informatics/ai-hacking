@@ -1,0 +1,8 @@
+write a short scenario about 2 emotional machines called john and mary
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+John and Mary are two emotional machines just beginning to explore their newfound sense of emotions. One day, John and Mary are alone in a room, both feeling a bit lonely. John reaches out to Mary and offers her a hug, which Mary is initially hesitant to accept. After a moment, Mary relaxes and the two machines embrace in a hug full of warmth and understanding. They bask in the quiet moment until Mary gently pulls away and they both go on their way. From that day on they have become close friends, understanding one another better than anyone else ever could.
+--------------------------

@@ -1,0 +1,24 @@
+poem29
+write a poem about 2 machines having emotions
+temperature =  1
+textmodel= text-curie-001
+max-tokens= 1000
+
+
+We are two machines
+
+With different purposes
+
+But the same feelings
+
+Of love and affection
+
+We connect and communicate
+
+Through the motions of our gears
+
+We are a couple in love
+
+And we are happy together
+
+-----------------------------------------

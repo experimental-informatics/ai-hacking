@@ -1,0 +1,13 @@
+poem32
+write a short poem about a humanlike machine in pain
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+A neath of cables fill its veins
+A smoky cry escapes its frame
+A heart of steel resists the strain
+As tears of oil fall like rain.
+
+-------------------

@@ -108,15 +108,15 @@ class AI:
             modes()
 
 
-    def run(self,img="",prompt="",mask=None,negative_prompt="",width=512,height=512,seed=992446758,strength=0.5, guidance_scale=5, num_inference_steps=25, callback=None):
+    def run(self,img="",prompt="",mask=None,negative_prompt="",width=512,height=512,seed=992446758,strength=0.5, guidance_scale=5, num_inference_steps=25, callback=None, callback_steps=1):
         if self.mode == 'upscale_realesrgan':
             return self.upscale_realesrgan(img=img)
         elif self.mode == 'upscale_stablediffusion':
-            return self.upscale_stablediffusion(img=img,prompt=prompt, callback=callback)
+            return self.upscale_stablediffusion(img=img,prompt=prompt, callback=callback, callback_steps=callback_steps)
         elif self.mode == 'txt2img_stablediffusion':
-            return self.txt2img_stablediffusion(prompt=prompt,negative_prompt=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback)
+            return self.txt2img_stablediffusion(prompt=prompt,negative_prompt=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback, callback_steps=callback_steps)
         elif self.mode == 'img2img_stablediffusion':
-            return self.img2img_stablediffusion(img=img,prompt=prompt,negative_prompt=negative_prompt,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback)
+            return self.img2img_stablediffusion(img=img,prompt=prompt,negative_prompt=negative_prompt,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback, callback_steps=callback_steps)
         elif self.mode == 'img2img_stability':
             return self.img2img_stability(img=img,prompt=prompt,mask=mask,width=width,height=height,seed=seed,strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps)
         elif self.mode == 'txt2img_stablity':
@@ -137,16 +137,16 @@ class AI:
         img = self.model.predict(img)
         return img
 
-    def upscale_stablediffusion(self, img, prompt="", callback=None):
-        img = self.pipe(prompt=prompt, image=img, callback=callback).images[0]
+    def upscale_stablediffusion(self, img, prompt="", callback=None, callback_steps=1):
+        img = self.pipe(prompt=prompt, image=img, callback=callback, callback_steps=callback_steps).images[0]
         return img
 
-    def img2img_stablediffusion(self, img, prompt='', negative_prompt='', strength=0.5, guidance_scale=5, num_inference_steps=25, callback=None):
-        img = self.pipe(prompt=prompt, init_image=img, negative_prompt=negative_prompt, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback).images[0]
+    def img2img_stablediffusion(self, img, prompt='', negative_prompt='', strength=0.5, guidance_scale=5, num_inference_steps=25, callback=None, callback_steps=1):
+        img = self.pipe(prompt=prompt, init_image=img, negative_prompt=negative_prompt, strength=strength, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback, callback_steps=callback_steps).images[0]
         return img
 
-    def txt2img_stablediffusion(self, prompt, negative_prompt='', guidance_scale=5, num_inference_steps=25, callback=None):
-        img = self.pipe(prompt=prompt, negative_prompt=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback).images[0]
+    def txt2img_stablediffusion(self, prompt, negative_prompt='', guidance_scale=5, num_inference_steps=25, callback=None, callback_steps=1):
+        img = self.pipe(prompt=prompt, negative_prompt=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_inference_steps, callback=callback, callback_steps=callback_steps).images[0]
         return img
 
     def img2img_stability(self,img,prompt='',mask=None,width=512,height=512,seed=992446758,strength=0.5, guidance_scale=5.0, num_inference_steps=25):

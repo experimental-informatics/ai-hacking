@@ -1,0 +1,1 @@
+ffmpeg -y -r 12.0 -i 20230201181935_%%05d.png -c:v libx264 -vf fps=12.0 -pix_fmt yuv420p -crf 17 -preset veryfast 20230201181935.mp4

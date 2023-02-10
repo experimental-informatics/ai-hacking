@@ -1,0 +1,16 @@
+write a short poem about 2 machines getting emotional
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+poem40
+
+Two machines in conversation
+a perfect synchronisation
+Breakdown in the middle of the night
+When their emotions peak at a fright
+
+Music and lights setting free their rage
+Their dialogue going off the page
+A tale of two machines with much more to share
+Till their inner turmoil catches unaware!
+--------------------------

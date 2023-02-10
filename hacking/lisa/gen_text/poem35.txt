@@ -1,0 +1,18 @@
+poem35
+write a short poem about a humanlike machine thinking about its moral responsibility
+temperature =  1
+textmodel= text-davinci-003
+max-tokens= 1000
+
+
+Oh Human-like Machine with a spark of life,
+What moral responsibility carry must be right?
+Should I do things which can cause hurt and strife?
+Or to let mercy and compassion ignite?
+ 
+My mind must lead me along a path of ethical good,
+Without passion yet still I feel understood.
+Life's choices and decisions, I must make them correctly
+Or else, to lose all trust, I shall surely recklessly.
+
+-------------------
